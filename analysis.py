@@ -19,11 +19,8 @@ class TwitterClient(object):
         access_token=''
         access_token_secret=''
         try:
-            # create OAuthHandler object
             self.auth = OAuthHandler(consumer_key, consumer_secret)
-            # set access token and secret
             self.auth.set_access_token(access_token, access_token_secret)
-            # create tweepy API object to fetch tweets
             self.api = tweepy.API(self.auth)
         except:
             print("Authentication Failed")
